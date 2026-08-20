@@ -1,0 +1,224 @@
+/* import font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html {
+    scroll-behavior: smooth; /* Sayfa içi linklerde yumuşak kaydırma efekti */
+}
+
+/* --- Genel Ayarlar --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #FFFFFF; 
+    color: #001f3f; 
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; 
+}
+
+/* --- Header ve Navigasyon --- */
+header {
+    background-color: #f0f8ff; 
+    border-bottom: 2px solid #1a3a79;
+    padding: 0 40px;
+    position: sticky; 
+    top: 0;
+    z-index: 1000; 
+}
+
+header nav {
+    display: flex; 
+    justify-content: flex-end; /* Linkleri sağa yasla */
+    align-items: center;
+    height: 70px;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Listeyi de flex container yap */
+    gap: 25px; /* Linkler arasına boşluk */
+}
+
+/* Link Stilleri*/
+header nav ul li a {
+    color: #1a3a79;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 5px;
+    transition: color 0.3s ease; 
+}
+
+header nav ul li a:hover {
+    color: #007bff; 
+}
+
+main {
+    padding: 40px;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+h1, h2 {
+    color: #1a3a79; 
+    border-bottom: 1px solid #cce0ff;
+    padding-bottom: 10px;
+}
+
+/* --- Ana Sayfa Stilleri --- */
+.hero-section {
+    display: flex; 
+    align-items: center; 
+    gap: 30px; 
+}
+
+.hero-section img {
+    width: 150px;
+    height: 150px;
+    border: 3px solid #1a3a79; 
+    border-radius: 50%; 
+}
+
+.info-box {
+    background-color: #f0f8ff;
+    border: 1px solid #1a3a79;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+/* Liste Stilleri */
+.info-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* --- Proje Sayfası Stilleri --- */
+.proje-karti {
+    background-color: #f0f8ff;
+    border: 1px solid #1a3a79;
+    padding: 25px;
+    margin-bottom: 20px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.proje-karti:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+}
+
+.teknolojiler {
+    margin-top: 15px;
+}
+
+.tags-container {
+    display: flex; /* Etiketleri yan yana dizmek için flexbox */
+    flex-wrap: wrap; /* Sığmazsa alt satıra geç */
+    gap: 8px; /* Etiketler arası boşluk */
+    margin-top: 8px;
+}
+
+.tech-tag {
+    background-color: #1a3a79; 
+    color: #ffffff; 
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* --- İletişim Sayfası Form  --- */
+form {
+    background-color: #f0f8ff;
+    padding: 30px;
+    border: 1px solid #1a3a79;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #1a3a79;
+}
+
+form input[type="text"],
+form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #1a3a79;
+    background-color: #FFFFFF;
+    color: #1a3a79;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+form button {
+    background-color: #1a3a79; 
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #1a3a79;
+    color: #f0f8ff;
+    padding: 40px 20px;
+    margin-top: 60px;
+    text-align: center;
+    position: relative;
+}
+
+footer h3 {
+    margin-top: 0;
+}
+
+.social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 24px;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #cce0ff;
+}
+
+/* --- Footer Form Stilleri --- */
+footer form {
+    max-width: 600px; /* Formun çok genişlemesini engelle */
+    margin: 30px auto 20px auto; /* Formu yatayda ortala ve dikey boşluk ver */
+    padding: 0; /* Formun kendi padding'ini sıfırla, footer'da zaten var */
+    background-color: transparent; /* Arka planını şeffaf yap */
+    border: none; /* Kenarlığı kaldır */
+    text-align: left; /* Form içeriğini sola yasla */
+}
+
+footer form label {
+    color: #f0f8ff; 
+}
+
+footer form input[type="text"],
+footer form input[type="email"] {
+    background-color: #f0f8ff; 
+    color: #1a3a79; 
+    border: 1px solid #f0f8ff; 
+    border-radius: 5px;
+}
+
+footer form button {
+    background-color: #f0f8ff; 
+    color: #1a3a79; 
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+footer form button:hover {
+    background-color: #ffffff;
+    color: #001f3f;
+}
