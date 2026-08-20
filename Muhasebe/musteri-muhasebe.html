@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Müşteri Detayları</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Müşteri Detayları</h1>
+            <nav>
+                <a href="anasayfa.html" class="btn">Ana Sayfaya Dön</a>
+                <button id="download-pdf-btn" class="btn">PDF Olarak İndir</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="pdf-content"> <!-- PDF'e dönüştürülecek ana içerik bu div içinde -->
+        <!-- Müşteri Bilgileri ve Düzenleme Alanı -->
+        <div class="customer-details-box">
+            <div id="customer-info-display">
+                <div class="customer-main-info">
+                    <h2 id="customer-name-header">Yükleniyor...</h2>
+                    <p id="customer-profession-display" class="profession">Yükleniyor...</p>
+                </div>
+                <button id="edit-customer-btn" class="btn btn-small">Bilgileri Düzenle</button>
+            </div>
+            <div id="customer-info-edit-form" class="hidden">
+                <h3>Müşteri Bilgilerini Düzenle</h3>
+                <form id="edit-customer-form">
+                    <div class="input-group">
+                        <label for="edit-customer-name">Adı Soyadı</label>
+                        <input type="text" id="edit-customer-name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="edit-customer-profession">Mesleği</label>
+                        <input type="text" id="edit-customer-profession" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn">Kaydet</button>
+                        <button type="button" id="cancel-edit-btn" class="btn btn-danger">İptal</button>
+                    </div>
+                </form>
+            </div>
+            <!-- Bakiye Özeti -->
+            <div class="summary-container">
+                <div class="summary-box income">
+                    <h3>Toplam Gelir</h3>
+                    <p id="total-income">0.00 ₺</p>
+                </div>
+                <div class="summary-box expense">
+                    <h3>Toplam Gider</h3>
+                    <p id="total-expense">0.00 ₺</p>
+                </div>
+                <div class="summary-box balance">
+                    <h3>Bakiye</h3>
+                    <p id="balance">0.00 ₺</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Yeni İşlem Ekleme Butonu ve Formu -->
+        <button id="show-add-transaction-form-btn" class="btn" style="margin-bottom: 1.5rem;">Yeni İşlem Ekle</button>
+        <div id="transaction-form-container" class="form-container hidden">
+            <h3>Yeni İşlem Ekle</h3>
+            <form id="add-transaction-form">
+                <div class="input-group">
+                    <label for="transaction-description">Açıklama</label>
+                    <input type="text" id="transaction-description" placeholder="Örn: Mart Ayı Danışmanlık Ücreti" required>
+                </div>
+                <div class="input-group">
+                    <label for="transaction-amount">Tutar (₺)</label>
+                    <input type="number" id="transaction-amount" step="0.01" placeholder="Örn: 1500" required>
+                </div>
+                <div class="input-group">
+                    <label for="transaction-type">İşlem Tipi</label>
+                    <select id="transaction-type">
+                        <option value="income">Gelir</option>
+                        <option value="expense">Gider</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn">İşlemi Ekle</button>
+                    <button type="button" id="cancel-add-transaction-btn" class="btn btn-danger">İptal</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- İşlem Geçmişi Tablosu -->
+        <div class="transaction-list">
+            <h2>İşlem Geçmişi</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th data-sort="date">Tarih</th>
+                        <th>Açıklama</th>
+                        <th data-sort="amount">Tutar</th>
+                        <th data-sort="type">Tip</th>
+                        <th></th> <!-- Silme butonu için boş başlık -->
+                    </tr>
+                </thead>
+                <tbody id="transaction-table-body"></tbody>
+            </table>
+        </div>
+        </div> <!-- #pdf-content div'inin sonu -->
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhasebe Defteri - Giriş</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="auth-box" class="form-container">
+        <!-- Login Form -->
+        <div id="login-form-container">
+            <h2>Giriş Yap</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="login-email">E-posta</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="input-group">
+                    <label for="login-password">Şifre</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn">Giriş Yap</button>
+                <p class="toggle-auth">
+                    Hesabın yok mu? <a href="#" id="show-register">Kayıt Ol</a>
+                </p>
+            </form>
+        </div>
+
+        <!-- Register Form -->
+        <div id="register-form-container" class="hidden">
+            <h2>Kayıt Ol</h2>
+            <form id="register-form">
+                <div class="input-group">
+                    <label for="register-name">Ad Soyad</label>
+                    <input type="text" id="register-name" required>
+                </div>
+                <div class="input-group">
+                    <label for="register-email">E-posta</label>
+                    <input type="email" id="register-email" required>
+                </div>
+                <div class="input-group">
+                    <label for="register-password">Şifre</label>
+                    <input type="password" id="register-password" required>
+                </div>
+                <button type="submit" class="btn">Kayıt Ol</button>
+                <p class="toggle-auth">
+                    Zaten hesabın var mı? <a href="#" id="show-login">Giriş Yap</a>
+                </p>
+            </form>
+            </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

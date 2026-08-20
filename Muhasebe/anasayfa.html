@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Sayfa - Müşteriler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Müşterilerim</h1>
+            <nav>
+                <a href="musteri-ekle.html" class="btn">Yeni Müşteri Ekle</a>
+                <button id="logout-btn" class="btn btn-danger">Çıkış Yap</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="input-group search-bar">
+            <input type="text" id="customer-search" placeholder="Müşteri adı veya mesleği ile ara...">
+        </div>
+        <div id="customer-list" class="customer-cards-container">
+            <!-- Müşteri kartları buraya JavaScript ile eklenecek -->
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

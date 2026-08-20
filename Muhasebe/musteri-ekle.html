@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Müşteri Ekle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Müşteri Ekle</h1>
+            <nav>
+                <a href="anasayfa.html" class="btn">Ana Sayfaya Dön</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="form-container">
+                <h2>Yeni Müşteri Ekle</h2>
+                <form id="add-customer-form">
+                    <div class="input-group">
+                        <label for="customer-name">Adı Soyadı</label>
+                        <input type="text" id="customer-name" placeholder="Müşteri Adı Soyadı" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="customer-profession">Mesleği</label>
+                        <input type="text" id="customer-profession" placeholder="Müşteri Mesleği" required>
+                    </div>
+                    <!-- customer-id input'u buraya eklendi -->
+                    <input type="hidden" id="customer-id" name="customer-id">
+                    <button type="submit" class="btn">Müşteriyi Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
