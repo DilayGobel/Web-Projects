@@ -46,8 +46,8 @@ Herhangi bir projeyi yerel ortamınızda görüntülemek için ilgili branch'e g
 
 ```bash
 # Repoyu klonlayın
-git clone <REPO_LINKI>
-cd <REPO_ADI>
+git clone (https://github.com/DilayGobel/Web-Projects.git)
+cd Web Projects
 
 # Tüm branch'leri listeleyin
 git branch -a
