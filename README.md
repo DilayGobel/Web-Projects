@@ -30,11 +30,11 @@ Bu depo, yaz stajı süresince geliştirilen 5 farklı web projesini içermekted
 * Makale ve rehberlerin temiz bir tipografiyle sunulduğu minimalist blog arayüzü.
 * **Öne Çıkanlar:** Okuma süresi göstergesi, etiket/yazar filtreleme mekanizması ve esnek grid düzeni.
 
-**4. To Do & Pomodoro Sitesi (`Project-Todo-Pomodoro`)**
+**4. To Do & Pomodoro Sitesi (`Project-Todo&Pomodoro`)**
 * Görev yönetimi ile odaklanma tekniğini birleştiren üretkenlik aracı.
 * **Öne Çıkanlar:** Dinamik görev ekleme/düzenleme/silme, 25/5 dakikalık Pomodoro sayacı, durum filtreleri ve verilerin tarayıcıda kalıcılığı (`LocalStorage`).
 
-**5. E-Ticaret Sitesi (`Project-Eticaret`)**
+**5. E-Ticaret Sitesi (`Project-E_Ticaret`)**
 * Ürün sergileme ve alışveriş süreçlerini simüle eden dinamik mağaza ön yüzü.
 * **Öne Çıkanlar:** Ürün filtreleme/arama, sepete ekleme/çıkarma, anlık fiyat ve miktar hesaplama, dinamik sepet modalı.
 
@@ -46,8 +46,8 @@ Herhangi bir projeyi yerel ortamınızda görüntülemek için ilgili branch'e g
 
 ```bash
 # Repoyu klonlayın
-git clone (https://github.com/DilayGobel/Web-Projects.git)
-cd Web Projects
+git clone https://github.com/DilayGobel/Web-Projects.git
+cd "Web Projects"
 
 # Tüm branch'leri listeleyin
 git branch -a
@@ -56,3 +56,11 @@ git branch -a
 git checkout Project-Portfolyo
 # ya da
 git checkout Project-E_Ticaret
+```
+
+---
+
+## 👤 Geliştirici
+
+* **GitHub:** [@DilayGobel](https://github.com/DilayGobel)
+* **LinkedIn:** [Dilay Göbel](https://www.linkedin.com/in/dilaygobel/)
