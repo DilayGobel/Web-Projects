@@ -1,0 +1,1244 @@
+:root {
+    --bg-dark: #141619;
+    --bg-card: #2C2E3A;
+    --bg-deep-blue: #050A44;
+    --accent-blue: #0A21C0;
+    --text-light: #B3B4BD;
+    --text-white: #FFFFFF;
+    --danger: #e53e3e;
+    --success: #38a169;
+    --warning: #dd6b20;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.hidden {
+    display: none;
+}
+
+/* --- Login Sayfası --- */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 1.5rem;
+    color: var(--text-white);
+}
+
+.input-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--bg-deep-blue);
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.input-group input:focus, .input-group select:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 5px rgba(10, 33, 192, 0.5);
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--accent-blue);
+    color: var(--text-white);
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #081aa1;
+}
+
+.toggle-link {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.toggle-link a {
+    color: var(--accent-blue);
+    font-weight: bold;
+}
+
+/* --- Navbar Menu --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: var(--bg-card);
+    border-bottom: 2px solid var(--bg-deep-blue);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Make the search bar grow between the logo and nav icons */
+.search-bar {
+    flex: 1 1 auto;
+    margin: 0 1rem;
+    min-width: 0; /* allow flex children to shrink properly */
+}
+
+.search-bar input,
+.search-bar #admin-product-search {
+    width: 100%;
+    padding: 0.85rem;
+    border: 1px solid var(--bg-deep-blue);
+    border-radius: 4px;
+    font-size: 1.05rem;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.left-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu-container {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-light);
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    /* Butonun hemen altında başlar */
+    right: 0;
+    background-color: var(--bg-card);
+    min-width: 160px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 0.5rem 0;
+}
+
+.dropdown-menu a {
+    color: var(--text-light);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    white-space: nowrap;
+    /* Menü öğelerinin tek satırda kalmasını sağlar */
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--accent-blue);
+    color: var(--text-white);
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    /* İkonlar arasına boşluk ekler */
+}
+
+.navbar-add-product-btn {
+    margin-left: 0.5rem;
+    white-space: nowrap;
+}
+
+.nav-icons a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    /* İkon ve yazı arasına boşluk */
+    position: relative;
+    /* Sepet sayacı için */
+}
+
+.nav-icons a:hover {
+    color: var(--text-white);
+}
+
+.nav-icons a i {
+    font-size: 1.2rem;
+    /* İkonları biraz büyütelim */
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--accent-blue);
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+}
+
+.logo a {
+    text-decoration: none;
+    color: var(--text-white);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+
+.container {
+    display: flex;
+    padding: 2rem 5%;
+    gap: 2rem;
+}
+
+.filters {
+    flex-basis: 20%;
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 8px;
+    align-self: flex-start;
+}
+
+.filters h3 {
+    color: var(--text-white);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-blue);
+}
+
+.filters ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.filters ul li a {
+    display: block;
+    padding: 0.5rem;
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.filters ul li a:hover,
+.filters ul li a.active {
+    background-color: var(--accent-blue);
+    color: var(--text-white);
+    padding-left: 10px;
+}
+
+.filter-group {
+    margin-bottom: 1.5rem;
+}
+
+.filter-group label {
+    display: block;
+    font-weight: 500;
+    color: var(--text-white);
+    margin-bottom: 0.5rem;
+}
+
+.filter-group input[type="range"],
+.filter-group select {
+    width: 100%;
+}
+
+.price-input-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.price-input-group input {
+    width: 100%;
+    text-align: center;
+    -moz-appearance: textfield; /* Firefox'ta number input oklarını gizle */
+}
+
+.price-input-group input::-webkit-outer-spin-button,
+.price-input-group input::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* Chrome, Safari'de number input oklarını gizle */
+    margin: 0;
+}
+
+.product-grid {
+    flex-basis: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    align-content: start; /* Tek ürün kaldığında dikeyde esnemeyi önler */
+}
+
+.product-card {
+    background: var(--bg-card);
+    border-radius: 8px;
+    border: 1px solid var(--bg-deep-blue);
+    overflow: hidden;
+    position: relative; /* İçerideki elementlerin konumlandırılması için */
+    display: flex; /* İçeriği dikeyde hizalamak için */
+    flex-direction: column; /* İçeriği dikeyde hizalamak için */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(10, 33, 192, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card-body {
+    padding: 1rem;
+    display: flex; /* İçeriği dikeyde hizalamak için */
+    flex-direction: column; /* İçeriği dikeyde hizalamak için */
+    flex-grow: 1; /* Mevcut alanı doldurmasını sağlar */
+}
+
+.product-card-body h4 {
+    color: var(--text-white);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    min-height: 53px; /* 2 satır için yeterli yükseklik (line-height * 2) */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 2 satır sonra kes */
+    -webkit-box-orient: vertical;
+    line-height: 1.4; /* Satır yüksekliğini ayarla */
+}
+
+.product-card-body .stock-text {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+}
+
+.product-card-link {
+    position: relative; /* "Tükendi" etiketi için gerekli */
+    text-decoration: none;
+    color: inherit;
+}
+
+.product-card.out-of-stock .product-card-link::after {
+    content: 'Tükendi';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    background-color: var(--warning);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.product-card.out-of-stock {
+    opacity: 0.6;
+}
+
+.product-card-body .price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+}
+
+.product-card-body .store-name {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.product-card-body .add-to-cart-btn {
+    margin-top: auto;
+    width: 100%;
+    padding: 0.7rem;
+    background: var(--accent-blue);
+    color: var(--text-white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.product-card-body .add-to-cart-btn:hover {
+    background: #0b838b; /* Primary'nin daha koyu tonu */
+}
+
+/* --- Miktar Kontrolü (Product Card) --- */
+.quantity-control-wrapper {
+    margin-top: auto; /* Butonları/kontrolü kartın en altına iter */
+    width: 100%;
+    display: flex;
+    justify-content: center; /* İçeriği ortala */
+    align-items: center;
+    padding-top: 0.7rem; /* Butonun padding'ine benzer */
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-dark);
+    border-radius: 5px;
+    overflow: hidden; /* Kenarlıkların düzgün görünmesi için */
+}
+
+.quantity-btn {
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-btn:hover {
+    background-color: #0b838b; /* Primary'nin daha koyu tonu */
+}
+
+.product-quantity {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    min-width: 30px; /* Sayının sığması için minimum genişlik */
+    text-align: center;
+    background-color: transparent;
+    color: var(--text-white);
+}
+
+/* --- Profil Sayfası --- */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0;
+}
+
+.profile-box {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.profile-box h2 {
+    margin-bottom: 1.5rem;
+    color: var(--text-white);
+}
+
+.profile-box .btn {
+    margin-top: 1rem;
+}
+
+/* --- Ürün Detay Sayfası --- */
+.product-detail {
+    display: flex;
+    gap: 3rem;
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.product-detail-image {
+    flex-basis: 40%;
+}
+
+.product-detail-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    aspect-ratio: 1 / 1; /* Resimlerin kare görünmesini sağlar */
+}
+
+.product-detail-info {
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-detail-info h1 {
+    color: var(--text-white);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.product-detail-info .detail-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    margin-bottom: 1.5rem;
+}
+
+.product-detail-info .detail-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--bg-deep-blue);
+    border-bottom: 1px solid var(--bg-deep-blue);
+}
+
+.product-detail-info .detail-meta .store-name {
+    font-weight: normal;
+}
+.product-detail-info .detail-meta .store-name strong {
+    font-weight: bold;
+}
+
+.product-detail-info .detail-description {
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    flex-grow: 1;
+}
+
+.add-to-cart-detail-btn {
+    width: 100%;
+    max-width: 300px; /* Buton çok geniş olmasın */
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+
+.search-bar {
+    flex-grow: 1;
+    margin: 0 2rem;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--bg-deep-blue);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.btn-danger {
+    background-color: var(--danger);
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* --- Sepet Sayfası --- */
+.cart-container {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cart-container h1 {
+    color: var(--text-white);
+    margin-top: 0;
+    margin-bottom: 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.cart-empty {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.cart-empty p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cart-list {
+    margin-bottom: 2rem;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--bg-deep-blue);
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.cart-item-info {
+    flex-grow: 1;
+}
+
+.cart-item-info h4 {
+    color: var(--text-white);
+    margin: 0 0 0.5rem 0;
+}
+
+.cart-item-total {
+    min-width: 100px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.remove-from-cart-btn {
+    background: none;
+    border: none;
+    color: var(--danger);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: 1rem; /* Miktar kontrolü ile arasına boşluk koy */
+}
+
+.cart-summary {
+    border-top: 2px solid var(--accent-blue);
+    padding-top: 1.5rem;
+    text-align: right;
+}
+
+.cart-summary h3 { color: var(--text-white); }
+.summary-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.summary-row .total-price {
+    color: var(--accent-blue);
+}
+
+.checkout-btn {
+    width: auto;
+    padding: 0.8rem 2rem;
+}
+
+/* Sepet sayfasındaki ürün miktarını göstermek için */
+.cart-item-info .price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-light); /* Fiyat rengini normal metin rengi yapalım */
+}
+
+/* --- Ödeme Sayfası --- */
+.payment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px); /* Header yüksekliğini düşerek ortala */
+}
+
+.payment-box {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+/* --- Yönetici Paneli --- */
+.admin-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.admin-top-row {
+    display: grid;
+    grid-template-columns: 1fr; /* Değişiklik: Tek sütunlu yapıya geç */
+    gap: 2rem;
+    align-items: stretch; /* Değişiklik: Öğelerin yüksekliğini eşitle */
+}
+
+.admin-welcome h1 {
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+}
+
+.admin-welcome p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+.admin-welcome {
+    background: linear-gradient(135deg, var(--bg-deep-blue), var(--accent-blue));
+    color: var(--text-white);
+    padding: 2rem;
+    border-radius: 8px;
+    height: 100%; /* Grid satırının tamamını kapla */
+}
+
+.welcome-stats-container {
+    margin-top: 1.5rem; /* Üstteki yazı ile arasına boşluk koy */
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1.5rem;
+}
+
+.admin-navigation-cards {
+    display: flex;
+    gap: 2rem;
+    /* Değişiklik: Kartları yan yana ve eşit genişlikte yap */
+    flex-direction: row; /* Zaten varsayılan ama netlik için kalabilir */
+    justify-content: space-between; /* Aralarında boşluk bırakarak yay */
+    align-items: stretch; /* Yüksekliklerini eşitle */
+}
+
+.admin-card {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    text-decoration: none;
+    color: var(--text-light); 
+    flex: 1; /* Değişiklik: Mevcut alanı eşit olarak paylaş */
+    /* Değişiklik: Kartların dikeyde esnemesini engellemek ve içeriği ortalamak için */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Metinleri de ortala */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+}
+
+.admin-card:hover {
+    transform: translateY(-5px);
+    background-color: var(--bg-deep-blue);
+    color: var(--text-white);
+}
+
+.admin-card i {
+    font-size: 2.5rem;
+    color: var(--accent-blue);
+    margin-bottom: 1rem;
+}
+
+.admin-card h2 {
+    margin-bottom: 0.5rem;
+    color: var(--text-white);
+}
+
+.admin-section {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+/* Header for admin section: title left, action button right */
+.admin-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.admin-section-header h2 {
+    color: var(--text-white);
+    margin: 0;
+}
+.admin-section-header .btn {
+    margin: 0;
+    width: auto;
+}
+
+.admin-section h2 {
+    color: var(--text-white);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--accent-blue);
+    padding-bottom: 1rem;
+}
+
+.admin-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+.admin-form input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--bg-deep-blue);
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.admin-form button {
+    grid-column: 1 / -1; /* Butonun tam genişlikte olmasını sağlar */
+    padding: 0.8rem;
+}
+
+.admin-table-container {
+    overflow-x: auto; /* Küçük ekranlarda tabloyu kaydırılabilir yap */
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--bg-deep-blue);
+}
+
+.admin-table th {
+    background-color: var(--bg-deep-blue);
+    color: var(--text-white);
+    font-weight: 600;
+}
+
+.admin-table tr:hover {
+    background-color: var(--bg-deep-blue);
+}
+
+.admin-table input[type="number"] {
+    width: 80px;
+    padding: 0.5rem;
+}
+
+.admin-table .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+}
+
+.admin-table th:last-child,
+.admin-table td:last-child {
+    min-width: 200px; /* Butonların yan yana durması için yeterli alan sağla */
+}
+
+.admin-product-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: nowrap; /* Yan yana durmalarını sağla */
+    align-items: center;
+}
+
+.admin-product-actions .btn {
+    width: auto; /* Butonların satırı paylaşmasını sağlar */
+}
+
+.order-card .order-header {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.order-status-selector {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--bg-deep-blue);
+    background-color: var(--bg-card);
+    color: var(--text-light);
+}
+
+.order-status-Hazırlanıyor { background-color: var(--warning); color: #fff; }
+.order-status-Yolda { background-color: var(--accent-blue); color: #fff; }
+.order-status-Teslim-Edildi { background-color: var(--success); color: #fff; }
+
+.order-status-selector option[value="Hazırlanıyor"] { background-color: var(--warning); }
+.order-status-selector option[value="Yolda"] { background-color: var(--accent-blue); }
+.order-status-selector option[value="Teslim Edildi"] { background-color: var(--success); }
+
+.order-header .order-user {
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+/* --- Dashboard İstatistik Kartları --- */
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background-color: var(--bg-dark);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.stat-card.rotating {
+    max-width: 350px; /* Kartın genişliğini ayarla */
+    max-width: 450px; /* Değişiklik: Kartın genişliğini artırarak ürün isminin sığmasını sağla */
+    margin: 0 auto; /* Kartı konteyner içinde ortala */
+}
+
+.stat-card i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-blue);
+}
+
+.stat-card h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-white);
+}
+
+/* --- Satış Grafiği --- */
+#sales-chart-container {
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+#sales-chart-container h3 {
+    color: var(--text-white);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 250px;
+    background-color: var(--bg-dark);
+    gap: 1rem;
+}
+
+.chart-bar {
+    flex: 1;
+    background-color: var(--accent-blue);
+    color: white;
+    text-align: center;
+    position: relative;
+    border-radius: 4px 4px 0 0;
+    transition: height 0.5s ease-out;
+}
+
+.chart-bar span {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+/* --- Modal Styles --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Ensure hidden class can hide modal-overlay even if .modal-overlay rule appears later */
+.modal-overlay.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    max-height: 90vh; /* Çok uzun formlar için */
+    overflow-y: auto; /* İçerik taşarsa kaydırma çubuğu */
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text-white);
+}
+
+.modal-close-btn:hover {
+    color: var(--text-light);
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--text-white);
+    border-bottom: 1px solid var(--bg-deep-blue);
+    padding-bottom: 1rem;
+}
+
+.modal-content .admin-form {
+    display: flex; /* Grid yerine flexbox kullanabiliriz veya grid'i koruyabiliriz */
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal-content .admin-form .btn {
+    margin-top: 1rem;
+    width: auto; /* Butonun tam genişlik yerine içeriğine göre genişlemesini sağlar */
+}
+
+/* --- Yönetici Filtreleri --- */
+.admin-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: center; /* Arama kutusunu ve select kutusunu dikeyde ortala */
+}
+
+.admin-filters input,
+.admin-filters select {
+    padding: 0.75rem;
+    border: 1px solid var(--bg-deep-blue);
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: var(--bg-dark);
+}
+
+#admin-product-search {
+    flex-grow: 1; /* Mevcut alanı doldurmasını sağlar */
+    padding: 0.95rem; /* Boyutunu biraz daha büyüt */
+    font-size: 1.12rem; /* Yazı boyutunu büyüt */
+    max-width: 420px; /* Arama kutusunu daha geniş yap */
+}
+
+/* --- Siparişlerim Sayfası --- */
+.orders-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px; /* Konteyneri biraz daha genişletelim */
+    margin: 0 auto;
+}
+
+.orders-header-container h1 {
+    color: var(--text-white);
+    margin-bottom: 2rem;
+    text-align: center;
+    border-bottom: 2px solid var(--accent-blue);
+    padding-bottom: 1rem;
+    margin-bottom: 0; /* Altındaki boşluğu sıfırla, gap ile kontrol edilecek */
+}
+
+.orders-list-container {
+    width: 100%;
+}
+
+.orders-empty {
+    background: var(--bg-card);
+    padding: 3rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.orders-empty p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.orders-list {
+    display: grid; /* Flex yerine Grid kullanarak daha kontrollü bir yapı sağlıyoruz */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Kartların minimum 350px olmasını ve sığdıkça yan yana gelmesini sağlar */
+    gap: 1.5rem;
+}
+
+.admin-dashboard {
+    gap: 1.5rem;
+}
+
+/* Responsive adjustments for admin pages */
+@media (max-width: 992px) {
+    nav {
+        padding: 0.75rem 2%;
+    }
+    .search-bar {
+        margin: 0 0.5rem;
+    }
+    .container {
+        padding: 1rem 3%;
+        gap: 1rem;
+    }
+    .admin-top-row {
+        grid-template-columns: 1fr; /* Küçük ekranlarda alt alta sırala */
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 0.5rem 1rem;
+    }
+    .left-nav { order: 1; }
+    .search-bar { order: 2; width: 100%; margin: 0.5rem 0; }
+    .nav-icons { order: 3; }
+    .nav-icons .btn { margin-left: 0.5rem; }
+    .container { padding: 1rem; }    
+    .orders-list {
+        grid-template-columns: 1fr; /* Küçük ekranlarda kartlar tam genişlikte alt alta sıralanır */
+    }
+    .order-card .order-header {
+        grid-template-columns: 1fr; /* stack header items */
+    }
+    .admin-table {
+        font-size: 0.9rem;
+    }
+    .admin-table th, .admin-table td { padding: 10px 8px; }
+}
+
+.order-card {
+    background: var(--bg-dark);
+    border: 1px solid var(--bg-deep-blue);
+    border-radius: 8px;
+    overflow: hidden;
+    /* Flex tanımını kaldırıyoruz çünkü artık Grid kullanıyoruz */
+    box-sizing: border-box;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    background-color: var(--bg-deep-blue); /* Daha nötr bir başlık rengi */
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--bg-deep-blue);
+    font-size: 0.9rem;
+    color: var(--text-white);
+}
+
+.order-header .total-price {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--accent-blue);
+}
+
+.order-body {
+    padding: 1rem 1.5rem;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--bg-card);
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.order-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.order-item .item-price {
+    margin-left: auto;
+    font-weight: 500;
+}

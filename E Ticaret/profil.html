@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profilim | E-Ticaret Portalı</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Iconları için -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left-nav">
+                <div class="logo"><a href="index.html">NexaMarket</a></div>
+            </div>
+            <div class="nav-icons">
+                <!-- Sepetim -->
+                <a href="sepet.html">
+                    <i class="fas fa-shopping-cart"></i> <!-- Sepet ikonu -->
+                    <span>Sepetim</span>
+                    <span id="cart-count">0</span>
+                </a>
+                <!-- Profil Menüsü -->
+                <div class="menu-container">
+                    <button id="menu-toggle" class="menu-button">
+                        <i class="fas fa-user"></i> <!-- Kullanıcı ikonu -->
+                    </button>
+                    <div id="dropdown-menu" class="dropdown-menu hidden">
+                        <a href="profil.html" id="dropdown-profile-link">Profilim</a>
+                        <a href="siparislerim.html" id="dropdown-orders-link">Siparişlerim</a>
+                        <a href="#" id="dropdown-logout-link">Çıkış Yap</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="profile-container">
+        <div class="profile-box">
+            <h2>Profil Bilgilerini Düzenle</h2>
+            <form id="profile-form">
+                <div class="input-group">
+                    <label for="profile-name">Ad Soyad</label>
+                    <input type="text" id="profile-name" required>
+                </div>
+                <div class="input-group">
+                    <label for="profile-email">E-mail</label>
+                    <input type="email" id="profile-email" required>
+                </div>
+                <div class="input-group">
+                    <label for="profile-password">Yeni Şifre (değiştirmek için doldurun)</label>
+                    <input type="password" id="profile-password">
+                </div>
+                <button type="submit" class="btn">Bilgileri Kaydet</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

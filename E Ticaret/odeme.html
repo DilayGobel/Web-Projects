@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödeme | E-Ticaret Portalı</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left-nav">
+                <div class="logo"><a href="index.html">E-Ticaret</a></div>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Ürün ara...">
+            </div>
+            <div class="nav-icons">
+                <a href="sepet.html">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Sepetim</span>
+                    <span id="cart-count">0</span>
+                </a>
+                <div class="menu-container">
+                    <button id="menu-toggle" class="menu-button">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <div id="dropdown-menu" class="dropdown-menu hidden">
+                        <a href="profil.html" id="dropdown-profile-link">Profilim</a>
+                        <a href="siparislerim.html" id="dropdown-orders-link">Siparişlerim</a>
+                        <a href="#" id="dropdown-logout-link">Çıkış Yap</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="payment-container">
+        <div class="payment-box">
+            <h2>Ödeme Bilgileri</h2>
+            <form id="payment-form">
+                <div class="input-group">
+                    <label for="card-number">Kart Numarası</label>
+                    <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX" maxlength="16" required>
+                </div>
+                <div class="input-group">
+                    <label for="expiry-date">Son Kullanma Tarihi (AA/YY)</label>
+                    <input type="text" id="expiry-date" placeholder="AA/YY" maxlength="5" required>
+                </div>
+                <div class="input-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" placeholder="XXX" maxlength="3" required>
+                </div>
+                <button type="submit" class="btn">Ödemeyi Tamamla</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

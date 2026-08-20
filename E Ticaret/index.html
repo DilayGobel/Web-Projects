@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Sayfa | E-Ticaret Portalı</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Iconları için -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left-nav"> 
+                <div class="logo"><a href="index.html">NexaMarket</a></div>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Ürün ara...">
+            </div>
+            <div class="nav-icons">
+                <!-- Sepetim -->
+                <a href="sepet.html">
+                    <i class="fas fa-shopping-cart"></i> <!-- Sepet ikonu -->
+                    <span>Sepetim</span>
+                    <span id="cart-count">0</span>
+                </a>
+                <!-- Profil Menüsü -->
+                <div class="menu-container">
+                    <button id="menu-toggle" class="menu-button">
+                        <i class="fas fa-user"></i> <!-- Kullanıcı ikonu -->
+                    </button>
+                    <div id="dropdown-menu" class="dropdown-menu hidden">
+                        <a href="profil.html" id="dropdown-profile-link">Profilim</a>
+                        <a href="siparislerim.html" id="dropdown-orders-link">Siparişlerim</a>
+                        <a href="#" id="dropdown-logout-link">Çıkış Yap</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <aside class="filters">
+            <h3>Kategoriler</h3>
+            <ul id="category-filter">
+                <li><a href="#" data-category="all">Tümü</a></li>
+                <li><a href="#" data-category="Elektronik">Elektronik</a></li>
+                <li><a href="#" data-category="Giyim">Giyim</a></li>
+                <li><a href="#" data-category="Kitap">Kitap</a></li>
+                <li><a href="#" data-category="Ev & Yaşam">Ev & Yaşam</a></li>
+            </ul>
+
+            <h3>Filtreler</h3>
+            <div class="filter-group">
+                <label>Fiyat Aralığı</label>
+                <div class="price-input-group">
+                    <input type="number" id="min-price-input" placeholder="Min">
+                    <span>-</span>
+                    <input type="number" id="max-price-input" placeholder="Max">
+                </div>
+            </div>
+            <div class="filter-group">
+                <label for="price-filter">Fiyat Aralığı</label>
+                <input type="range" id="price-filter" min="0" max="50000" step="100">
+                <span id="price-value">₺50000</span>
+            </div>
+             <div class="filter-group">
+                <label for="color-filter">Renk</label>
+                <select id="color-filter">
+                    <option value="all">Tümü</option>
+                    <option value="Siyah">Siyah</option>
+                    <option value="Beyaz">Beyaz</option>
+                    <option value="Mavi">Mavi</option>
+                    <option value="Kırmızı">Kırmızı</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="brand-filter">Marka</label>
+                <select id="brand-filter">
+                    <option value="all">Tümü</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="Nike">Nike</option>
+                    <option value="Adidas">Adidas</option>
+                    <option value="Penguin">Penguin</option>
+                    <option value="Karaca">Karaca</option>
+                </select>
+            </div>
+             <div class="filter-group">
+                <label for="sort-by">Sırala</label>
+                <select id="sort-by">
+                    <option value="default">Normal</option>
+                    <option value="price-asc">Fiyata Göre Artan</option>
+                    <option value="price-desc">Fiyata Göre Azalan</option>
+                </select>
+            </div>
+        </aside>
+
+        <section class="product-grid" id="product-grid">
+            <!-- Ürün kartları buraya eklenecek -->
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

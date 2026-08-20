@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sepetim | E-Ticaret Portalı</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Iconları için -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left-nav"> 
+                <div class="logo"><a href="index.html">NexaMarket</a></div>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Ürün ara...">
+            </div>
+            <div class="nav-icons">
+                <!-- Sepetim -->
+                <a href="sepet.html">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Sepetim</span>
+                    <span id="cart-count">0</span>
+                </a>
+                <!-- Profil Menüsü -->
+                <div class="menu-container">
+                    <button id="menu-toggle" class="menu-button">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <div id="dropdown-menu" class="dropdown-menu hidden">
+                        <a href="profil.html" id="dropdown-profile-link">Profilim</a>
+                        <a href="siparislerim.html" id="dropdown-orders-link">Siparişlerim</a>
+                        <a href="#" id="dropdown-logout-link">Çıkış Yap</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="cart-container">
+            <h1>Sepetim</h1>
+            <div id="cart-items-container"></div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
