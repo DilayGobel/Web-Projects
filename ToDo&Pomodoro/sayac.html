@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayaç</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="index.html">Çalışma Defterim</a></h1>
+            <nav>
+                <a href="index.html">Ana Sayfa</a>
+                <a href="gorev-ekle.html">Görev Ekle</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="timer-container">
+                <div class="timer-modes">
+                    <button id="pomodoro-mode-btn" class="mode-btn active">Pomodoro</button>
+                    <button id="stopwatch-mode-btn" class="mode-btn">Kronometre</button>
+                </div>
+
+                <!-- Pomodoro Modu -->
+                <div id="pomodoro-timer" class="timer-mode-content active">
+                    <div class="timer-presets">
+                        <button class="preset-btn" data-time="25">25 Dakika</button>
+                        <button class="preset-btn" data-time="5">5 Dakika Mola</button>
+                        <button class="preset-btn" data-time="15">15 Dakika Mola</button>
+                    </div>
+                    <div id="pomodoro-display" class="timer-display">25:00</div>
+                    <div class="timer-controls">
+                        <button id="pomodoro-start"><i class="fas fa-play"></i> Başlat</button>
+                        <button id="pomodoro-pause"><i class="fas fa-pause"></i> Duraklat</button>
+                        <button id="pomodoro-reset"><i class="fas fa-sync-alt"></i> Sıfırla</button>
+                    </div>
+                </div>
+
+                <!-- Kronometre Modu -->
+                <div id="stopwatch-timer" class="timer-mode-content">
+                    <div id="stopwatch-display" class="timer-display">00:00:00</div>
+                    <div class="timer-controls">
+                        <button id="stopwatch-start"><i class="fas fa-play"></i> Başlat</button>
+                        <button id="stopwatch-stop"><i class="fas fa-stop"></i> Durdur ve Kaydet</button>
+                        <button id="stopwatch-reset"><i class="fas fa-sync-alt"></i> Sıfırla</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

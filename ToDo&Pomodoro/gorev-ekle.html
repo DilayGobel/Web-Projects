@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeni Görev Ekle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="index.html">Çalışma Defterim</a></h1>
+            <nav>
+                <a href="index.html">Ana Sayfa</a>
+                <a href="sayac.html">Sayaç</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Yeni Görev Ekle</h2>
+            <form id="add-task-form" class="task-form">
+                <div class="form-group">
+                    <label for="task-title">Görev Adı</label>
+                    <input type="text" id="task-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="task-details">Görev Detayları</label>
+                    <textarea id="task-details" rows="5"></textarea>
+                </div>
+                <button type="submit">Görevi Ekle</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
