@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Sitesi - Ana Sayfa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="index.html">Blog Sitem</a></h1>
+            <nav>
+                <a href="blog-ekle.html">Blog Ekle</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Son Gönderiler</h2>
+            <div class="blog-slider">
+                <button id="prevBtn" class="slider-btn">&lt;</button>
+                <div class="blog-list-wrapper">
+                    <div id="blog-list" class="blog-list">
+                        <!-- Blog kartları buraya JS ile eklenecek -->
+                        <p id="no-blogs-message">Henüz blog gönderisi yok. İlkini eklemek için 'Blog Ekle'ye tıklayın!</p>
+                    </div>
+                </div>
+                <button id="nextBtn" class="slider-btn">&gt;</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Blog Sitem. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

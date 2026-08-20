@@ -1,0 +1,317 @@
+/* --- Genel Stiller --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Header --- */
+header {
+    background-color: #ffffff;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+header h1 a {
+    color: #333;
+    text-decoration: none;
+}
+
+header nav a {
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+}
+
+/* --- Main Content --- */
+main {
+    padding: 2rem 0;
+    flex-grow: 1; /* Bu, main'in mevcut alanı doldurmasını ve footer'ı aşağı itmesini sağlar */
+}
+
+main h2 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Blog Slider (Anasayfa) --- */
+.blog-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.blog-list-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.blog-list {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+#no-blogs-message {
+    width: 100%;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+.blog-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex: 0 0 calc(33.333% - 14px); /* 3 kart göster, gap'i hesaba kat */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasyonlu geçiş */
+}
+
+.blog-card:hover {
+    transform: translateY(-5px); /* Kartı yukarı kaydır */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* Gölgeyi belirginleştir */
+}
+
+.blog-card h3 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.blog-meta {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.blog-card p {
+    flex-grow: 1; /* Butonu aşağı itmek için */
+}
+
+.blog-card-footer {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.blog-card-footer a,
+.blog-card-footer button {
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.blog-card-footer .read-more {
+    background-color: #28a745;
+}
+.blog-card-footer .read-more:hover {
+    background-color: #218838;
+}
+
+.blog-card-footer .edit-btn {
+    background-color: #ffc107; /* Warning color */
+}
+.blog-card-footer .edit-btn:hover {
+    background-color: #e0a800;
+}
+
+.blog-card-footer .delete-btn {
+    background-color: #dc3545; /* Danger color */
+}
+.blog-card-footer .delete-btn:hover {
+    background-color: #c82333;
+}
+
+.slider-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+#prevBtn {
+    left: -25px;
+}
+
+#nextBtn {
+    right: -25px;
+}
+
+/* --- Blog Ekleme Sayfası --- */
+#add-blog-form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.form-grup {
+    margin-bottom: 1.5rem;
+}
+
+.form-grup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-grup input[type="text"],
+.form-grup textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.btn-submit {
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* --- Blog Detay Sayfası --- */
+#blog-detail-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#blog-detail-content .blog-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+#blog-detail-content .blog-meta-detail {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 20px;
+}
+
+#blog-detail-content .blog-full-content {
+    font-size: 1.1rem;
+    white-space: pre-wrap; /* Boşlukları ve satır sonlarını koru */
+}
+
+.blog-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 10px;
+}
+
+.blog-actions .edit-btn,
+.blog-actions .delete-btn {
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.blog-actions .edit-btn {
+    background-color: #ffc107;
+}
+.blog-actions .edit-btn:hover {
+    background-color: #e0a800;
+}
+
+.blog-actions .delete-btn {
+    background-color: #dc3545;
+}
+.blog-actions .delete-btn:hover {
+    background-color: #c82333;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+}
