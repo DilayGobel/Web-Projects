@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>Gündem Haberleri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Gündem Haberleri</h1>
+    </header>
+
+    <div class="container">
+        <main>
+            <div class="main-slider-wrapper">
+                <button id="main-prev-btn" class="main-slider-btn">&lt;</button>
+                <div class="haberler-wrapper">
+                    <div class="haberler-container">
+                        <!-- Slide 1 -->
+                        <div class="haber-slide">
+                            <div class="haber-karti">
+                                <h2>Şehrin Merkezindeki Heykele Tırmanan Kedi, İtfaiye Ekiplerini Saatlerce Uğraştırdı!</h2>
+                                <p>Sivas'ın en işlek meydanındaki Atatürk heykeline tırmanan ve inmemekte direnen bir kedi, hem halkın ilgisini çekti hem de kurtarma ekiplerine zor anlar yaşattı...</p>
+                                <a href="haber1.html" class="detay-linki">Detaylar</a>
+                            </div>
+                            <div class="haber-karti">
+                                <h2>Yerel Patates Üretiminde Rekor Artış: İşte Rakamlar</h2>
+                                <p>Bu yılki verimli hasat dönemiyle birlikte Sivas ve çevresinde patates üretiminde tarihi bir artış yaşandı. Yetkililer, verileri bir tablo ile paylaştı...</p>
+                                <a href="haber2.html" class="detay-linki">Detaylar</a>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="haber-slide">
+                            <div class="haber-karti">
+                                <h2>Teknoloji Fuarı İçin Geri Sayım Başladı: Öne Çıkanlar</h2>
+                                <p>Yılın en büyük teknoloji fuarı için hazırlıklar tamamlandı. Fuarda tanıtılacak olan ve merakla beklenen bazı teknolojiler listelendi...</p>
+                                <a href="haber3.html" class="detay-linki">Detaylar</a>
+                            </div>
+                            <div class="haber-karti">
+                                <h2>Yeni Park Alanı Halkın Hizmetine Açıldı</h2>
+                                <p>Şehrin nefes alacağı yeni bir yeşil alan, çocuk oyun parkları ve spor aletleriyle birlikte hizmete girdi...</p>
+                                <a href="haber4.html" class="detay-linki">Detaylar</a>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="haber-slide">
+                            <div class="haber-karti">
+                                <h2>Tarihi Konak Restore Ediliyor</h2>
+                                <p>Yıllardır atıl durumda olan tarihi konak, belediyenin başlattığı restorasyon projesiyle yeniden hayat bulacak...</p>
+                                <a href="haber5.html" class="detay-linki">Detaylar</a>
+                            </div>
+                            <div class="haber-karti">
+                                <h2>Öğrencilerden Anlamlı Proje: "Bir Kitap da Sen Getir"</h2>
+                                <p>Lise öğrencileri, köy okullarındaki kütüphaneleri zenginleştirmek için bir kampanya başlattı...</p>
+                                <a href="haber6.html" class="detay-linki">Detaylar</a>
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="haber-slide">
+                            <div class="haber-karti">
+                                <h2>Gastronomi Festivali Ziyaretçi Akınına Uğradı</h2>
+                                <p>Yöresel lezzetlerin tanıtıldığı festival, hem yerel halktan hem de şehir dışından büyük ilgi gördü...</p>
+                                <a href="haber7.html" class="detay-linki">Detaylar</a>
+                            </div>
+                            <div class="haber-karti">
+                                <h2>Mobil Uygulama Yarışmasında Birincilik Sivas'a</h2>
+                                <p>Üniversite öğrencilerinin geliştirdiği yenilikçi mobil uygulama, ulusal yarışmada birincilik ödülünü kazandı...</p>
+                                <a href="haber8.html" class="detay-linki">Detaylar</a>
+                            </div>
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="haber-slide">
+                            <div class="haber-karti">
+                                <h2>Kuraklık Tehlikesi ve Alınacak Önlemler Masaya Yatırıldı</h2>
+                                <p>Ziraat odası başkanları ve çiftçiler, artan kuraklık riskine karşı acil eylem planını görüştü...</p>
+                                <a href="haber9.html" class="detay-linki">Detaylar</a>
+                            </div>
+                            <div class="haber-karti">
+                                <h2>Amatör Tiyatro Topluluğu Yeni Sezona Hazır</h2>
+                                <p>Şehrin sevilen tiyatro topluluğu, yeni sezonda sahneleyeceği oyunların provalarına başladı...</p>
+                                <a href="haber10.html" class="detay-linki">Detaylar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="main-next-btn" class="main-slider-btn">&gt;</button>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <h2>İhbar Hattı</h2>
+            <p>Gündeme dair bir haberiniz varsa bizimle paylaşın.</p>
+            <form>
+                <div class="form-grup">
+                    <label for="ihbar-baslik">Haber Başlığı:</label>
+                    <input type="text" id="ihbar-baslik" name="ihbar-baslik" required>
+                </div>
+                <div class="form-grup">
+                    <label for="ihbar-konu">Haber Konusu:</label>
+                    <input type="text" id="ihbar-konu" name="ihbar-konu" required>
+                </div>
+                <div class="form-grup">
+                    <label for="ihbar-aciklama">Haber Kısa Açıklaması:</label>
+                    <textarea id="ihbar-aciklama" name="ihbar-aciklama" rows="3" required></textarea>
+                </div>
+                <div class="form-grup">
+                    <label for="ihbar-detay">Haber Detayları:</label>
+                    <textarea id="ihbar-detay" name="ihbar-detay" rows="6" required></textarea>
+                </div>
+                <button type="button" onclick="alert('Haber Gönderilmiştir'); this.form.reset();">İhbar Et</button>
+            </form>
+        </div>
+        <p class="copyright">Tüm Hakları Saklıdır &copy; 2026 Gündem Haberleri</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
